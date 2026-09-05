@@ -753,22 +753,31 @@ func (x *CustomOverlapPolicy) GetName() string {
 type StartActivityExecutionInfo struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The activity ID may have a timestamp appended for uniqueness.
-	ActivityId             string                `protobuf:"bytes,1,opt,name=activity_id,json=activityId,proto3" json:"activity_id,omitempty"`
-	ActivityType           *v11.ActivityType     `protobuf:"bytes,2,opt,name=activity_type,json=activityType,proto3" json:"activity_type,omitempty"`
-	TaskQueue              *v12.TaskQueue        `protobuf:"bytes,3,opt,name=task_queue,json=taskQueue,proto3" json:"task_queue,omitempty"`
-	ScheduleToCloseTimeout *durationpb.Duration  `protobuf:"bytes,4,opt,name=schedule_to_close_timeout,json=scheduleToCloseTimeout,proto3" json:"schedule_to_close_timeout,omitempty"`
-	ScheduleToStartTimeout *durationpb.Duration  `protobuf:"bytes,5,opt,name=schedule_to_start_timeout,json=scheduleToStartTimeout,proto3" json:"schedule_to_start_timeout,omitempty"`
-	StartToCloseTimeout    *durationpb.Duration  `protobuf:"bytes,6,opt,name=start_to_close_timeout,json=startToCloseTimeout,proto3" json:"start_to_close_timeout,omitempty"`
-	HeartbeatTimeout       *durationpb.Duration  `protobuf:"bytes,7,opt,name=heartbeat_timeout,json=heartbeatTimeout,proto3" json:"heartbeat_timeout,omitempty"`
-	RetryPolicy            *v11.RetryPolicy      `protobuf:"bytes,8,opt,name=retry_policy,json=retryPolicy,proto3" json:"retry_policy,omitempty"`
-	Input                  *v11.Payloads         `protobuf:"bytes,9,opt,name=input,proto3" json:"input,omitempty"`
-	SearchAttributes       *v11.SearchAttributes `protobuf:"bytes,10,opt,name=search_attributes,json=searchAttributes,proto3" json:"search_attributes,omitempty"`
-	Header                 *v11.Header           `protobuf:"bytes,11,opt,name=header,proto3" json:"header,omitempty"`
-	UserMetadata           *v13.UserMetadata     `protobuf:"bytes,12,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
-	Priority               *v11.Priority         `protobuf:"bytes,13,opt,name=priority,proto3" json:"priority,omitempty"`
-	StartDelay             *durationpb.Duration  `protobuf:"bytes,14,opt,name=start_delay,json=startDelay,proto3" json:"start_delay,omitempty"`
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	ActivityId   string            `protobuf:"bytes,1,opt,name=activity_id,json=activityId,proto3" json:"activity_id,omitempty"`
+	ActivityType *v11.ActivityType `protobuf:"bytes,2,opt,name=activity_type,json=activityType,proto3" json:"activity_type,omitempty"`
+	TaskQueue    *v12.TaskQueue    `protobuf:"bytes,3,opt,name=task_queue,json=taskQueue,proto3" json:"task_queue,omitempty"`
+	// (-- api-linter: core::0140::prepositions=disabled
+	//
+	//	aip.dev/not-precedent: "to" is used to indicate interval. --)
+	ScheduleToCloseTimeout *durationpb.Duration `protobuf:"bytes,4,opt,name=schedule_to_close_timeout,json=scheduleToCloseTimeout,proto3" json:"schedule_to_close_timeout,omitempty"`
+	// (-- api-linter: core::0140::prepositions=disabled
+	//
+	//	aip.dev/not-precedent: "to" is used to indicate interval. --)
+	ScheduleToStartTimeout *durationpb.Duration `protobuf:"bytes,5,opt,name=schedule_to_start_timeout,json=scheduleToStartTimeout,proto3" json:"schedule_to_start_timeout,omitempty"`
+	// (-- api-linter: core::0140::prepositions=disabled
+	//
+	//	aip.dev/not-precedent: "to" is used to indicate interval. --)
+	StartToCloseTimeout *durationpb.Duration  `protobuf:"bytes,6,opt,name=start_to_close_timeout,json=startToCloseTimeout,proto3" json:"start_to_close_timeout,omitempty"`
+	HeartbeatTimeout    *durationpb.Duration  `protobuf:"bytes,7,opt,name=heartbeat_timeout,json=heartbeatTimeout,proto3" json:"heartbeat_timeout,omitempty"`
+	RetryPolicy         *v11.RetryPolicy      `protobuf:"bytes,8,opt,name=retry_policy,json=retryPolicy,proto3" json:"retry_policy,omitempty"`
+	Input               *v11.Payloads         `protobuf:"bytes,9,opt,name=input,proto3" json:"input,omitempty"`
+	SearchAttributes    *v11.SearchAttributes `protobuf:"bytes,10,opt,name=search_attributes,json=searchAttributes,proto3" json:"search_attributes,omitempty"`
+	Header              *v11.Header           `protobuf:"bytes,11,opt,name=header,proto3" json:"header,omitempty"`
+	UserMetadata        *v13.UserMetadata     `protobuf:"bytes,12,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
+	Priority            *v11.Priority         `protobuf:"bytes,13,opt,name=priority,proto3" json:"priority,omitempty"`
+	StartDelay          *durationpb.Duration  `protobuf:"bytes,14,opt,name=start_delay,json=startDelay,proto3" json:"start_delay,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *StartActivityExecutionInfo) Reset() {
