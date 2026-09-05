@@ -301,6 +301,43 @@ func (this *Execution) Equal(that interface{}) bool {
 	return proto.Equal(this, that1)
 }
 
+// Marshal an object of type ActionExecutionResult to the protobuf v3 wire format
+func (val *ActionExecutionResult) Marshal() ([]byte, error) {
+	return proto.Marshal(val)
+}
+
+// Unmarshal an object of type ActionExecutionResult from the protobuf v3 wire format
+func (val *ActionExecutionResult) Unmarshal(buf []byte) error {
+	return proto.Unmarshal(buf, val)
+}
+
+// Size returns the size of the object, in bytes, once serialized
+func (val *ActionExecutionResult) Size() int {
+	return proto.Size(val)
+}
+
+// Equal returns whether two ActionExecutionResult values are equivalent by recursively
+// comparing the message's fields.
+// For more information see the documentation for
+// https://pkg.go.dev/google.golang.org/protobuf/proto#Equal
+func (this *ActionExecutionResult) Equal(that interface{}) bool {
+	if that == nil {
+		return this == nil
+	}
+
+	var that1 *ActionExecutionResult
+	switch t := that.(type) {
+	case *ActionExecutionResult:
+		that1 = t
+	case ActionExecutionResult:
+		that1 = &t
+	default:
+		return false
+	}
+
+	return proto.Equal(this, that1)
+}
+
 // Marshal an object of type WorkflowType to the protobuf v3 wire format
 func (val *WorkflowType) Marshal() ([]byte, error) {
 	return proto.Marshal(val)
